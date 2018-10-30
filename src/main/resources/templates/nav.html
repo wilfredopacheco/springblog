@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<nav th:fragment="nav">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/users">Users</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/roll-dice">Roll</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+    </ul>
+</nav>
+
+</body>
+</html>

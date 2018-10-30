@@ -1,24 +1,34 @@
 package com.codeup.springblog;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 @Controller
 public class PostController {
 
+    List<Post> posts = new ArrayList<>();
+
     @GetMapping("/posts")
-    @ResponseBody
-    public String postIndex() {
-        return "posts index page";
+    public String postIndex(Model vModel) {
+        posts.add(new Post("a good day", "meh"));
+        posts.add(new Post("a bad day", "meh again"));
+
+        vModel.addAttribute("posts", posts);
+        return "posts/index";
     }
 
     @GetMapping("/posts/{id}")
-    @ResponseBody
-    public String individualPost(@PathVariable String id){
-        return "View an individual post id= " +id;
+    public String individualPost(@PathVariable int id, Model vModel){
+        vModel.addAttribute("post", posts.get(id-1));
+        return "posts/show";
     }
 
     @GetMapping("/posts/create")
@@ -26,7 +36,6 @@ public class PostController {
     public void createPost(@PathVariable String post){
 
     }
-
 
     @PostMapping("/posts/create")
     @ResponseBody

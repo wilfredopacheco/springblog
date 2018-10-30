@@ -11,13 +11,11 @@
 </head>
 <body class="container">
 <nav th:replace="nav :: nav"/>
-<h1>this is the home page</h1>
-<p th:text="${name}"></p>
-
-<!--<div th:text="${}"></div>-->
-
-
-
+<h1>list of post</h1>
+<div class="card col-4" th:each="post : ${posts}">
+        <h3 class="" th:text="${post.title}"></h3>
+        <p class="" th:text="${post.body}"></p>
+</div>
 
 <footer th:replace="footer :: footer"/>
 </body>
