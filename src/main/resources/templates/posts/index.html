@@ -10,13 +10,24 @@
     <title>Document</title>
 </head>
 <body class="container">
+<!--<div class="card col-8">-->
 <nav th:replace="nav :: nav"/>
-<h1>list of post</h1>
-<div class="card col-4" th:each="post : ${posts}">
+<h1>Your Posts:</h1>
+<div class="card col-8 p-4" th:each="post : ${posts}">
+    <div>
         <h3 class="" th:text="${post.title}"></h3>
+    </div>
+    <div>
         <p class="" th:text="${post.body}"></p>
+    </div>
+    <div>
+        <form th:action="@{/posts/{id}/update(id=${post.id})}" method="get" th:object="${post.id}">
+            <!--<input type="hidden" th:value="${post.id}"/>-->
+            <button type="submit" class="btn btn-warning">edit</button>
+        </form>
+    </div>
 </div>
-
+<!--</div>-->
 <footer th:replace="footer :: footer"/>
 </body>
 </html>
