@@ -9,7 +9,12 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class PostController {
-    PostSvc postSvc = new PostSvc();
+    private PostSvc postSvc;
+
+    //Dependency Injection
+    public PostController(PostSvc postSvc){
+        this.postSvc = postSvc;
+    }
 
     @GetMapping("/posts")
     public String postIndex(Model vModel) {
@@ -31,7 +36,7 @@ public class PostController {
 
     @PostMapping("/posts/create")
     public String createPost(@ModelAttribute Post post){
-        Post savedPost = postSvc.savePost(post);
+        Post savedPost = postSvc.createPost(post);
         return "redirect:/posts/" + savedPost.getId();
     }
 
@@ -45,6 +50,12 @@ public class PostController {
     public String showUpdateForm(@ModelAttribute Post post){
         Post updatePost = postSvc.update(post);
         return "redirect:/posts/" + updatePost.getId();
+    }
+
+    @GetMapping("/posts/search/{term}")
+    public String showResults(@PathVariable String term, Model vModel){
+        vModel.addAttribute("post", postSvc.search(term, term));
+        return "post/index";
     }
 
 
