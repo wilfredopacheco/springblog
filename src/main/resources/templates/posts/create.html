@@ -2,7 +2,7 @@
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head>
+<head th:replace="head :: head">
     <meta charset="UTF-8"/>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
@@ -11,24 +11,27 @@
 </head>
 <body class="container">
 <nav th:replace="nav :: nav"/>
-<div class="card col-10 p-3 mt-4">
-<h1 class="text-center">Create Post</h1>
-<div class="card col-12 p-3">
-    <form th:action="@{/posts/create}" method="post" th:object="${post}">
-        <div class="form-group">
-        <label for="title">Title:</label>
-        <input th:field="*{title}" class="form-control" id="title" />
+<div>
+    <div class="card col-10 p-3 mt-4 border-dark mb-3">
+        <h1 class="text-center">Create Post</h1>
+        <div class="card col-12 p-3 border-dark mb-3">
+            <form th:action="@{/posts/create}" method="post" th:object="${post}">
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input th:field="*{title}" class="form-control" id="title" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea th:field="*{body}" class="form-control" id="description" rows="3"></textarea>
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
-        <br />
-        <div class="form-group">
-            <label for="description">Description:</label>
-            <textarea th:field="*{body}" class="form-control" id="description" rows="3"></textarea>
-        </div>
-        <br />
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    </div>
 </div>
-</div>
+
 <footer th:replace="footer :: footer"/>
 </body>
 </html>

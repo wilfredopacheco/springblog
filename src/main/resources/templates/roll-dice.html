@@ -7,24 +7,27 @@
 <body class="container">
 <nav th:replace="nav :: nav"/>
 
+<div class="card col-8 p-4 border-dark mb-3">
+    <div class='display-4'>Please enter your guess...</div>
+    <nav class="mt-4">
+        <ul class="nav">
+            <li class="nav-item mr-2 border border-primary rounded-circle">
+                <a class="nav-link active" href='/roll-dice/1'>1</a></li>
+            <li class="nav-item mr-2 border border-primary rounded-circle">
+                <a class="nav-link active" href='/roll-dice/2'>2</a></li>
+            <li class="nav-item mr-2 border border-primary rounded-circle">
+                <a class="nav-link active" href='/roll-dice/3'>3</a></li>
+            <li class="nav-item mr-2 border border-primary rounded-circle">
+                <a class="nav-link active" href='/roll-dice/4'>4</a></li>
+            <li class="nav-item mr-2 border border-primary rounded-circle">
+                <a class="nav-link active" href='/roll-dice/5'>5</a></li>
+            <li class="nav-item mr-2 border border-primary rounded-circle">
+                <a class="nav-link active" href='/roll-dice/6'>6</a></li>
+        </ul>
+    </nav>
 
-<div class='display-4'>Please enter your guess...</div>
-<nav class="mt-4">
-<ul class="nav">
-    <li class="nav-item mr-2 border border-primary rounded-circle">
-            <a class="nav-link active" href='/roll-dice/1'>1</a></li>
-    <li class="nav-item mr-2 border border-primary rounded-circle">
-            <a class="nav-link active" href='/roll-dice/2'>2</a></li>
-    <li class="nav-item mr-2 border border-primary rounded-circle">
-            <a class="nav-link active" href='/roll-dice/3'>3</a></li>
-    <li class="nav-item mr-2 border border-primary rounded-circle">
-            <a class="nav-link active" href='/roll-dice/4'>4</a></li>
-    <li class="nav-item mr-2 border border-primary rounded-circle">
-            <a class="nav-link active" href='/roll-dice/5'>5</a></li>
-    <li class="nav-item mr-2 border border-primary rounded-circle">
-            <a class="nav-link active" href='/roll-dice/6'>6</a></li>
-</ul>
-</nav>
+</div>
+
 
 <!--<p th:text="${result}">-->
 <!--...-->

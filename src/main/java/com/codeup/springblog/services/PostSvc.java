@@ -22,7 +22,6 @@ public class PostSvc {
         return postRepo.findAll();
     }
 
-
     public Post createPost(Post post){
         return postRepo.save(post);
     }
@@ -32,6 +31,11 @@ public class PostSvc {
     }
 
     public List<Post> search(String str, String ing) {
-        return postRepo.findAllByOrDescriptionContains(str, ing);
+        return postRepo.findAllByOrBodyContains(str, ing);
+    }
+
+    public void deletePost(long id){
+        postRepo.delete(id);
+
     }
 }

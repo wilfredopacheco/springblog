@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class PostController {
-    private PostSvc postSvc;
+    private final PostSvc postSvc;
 
     //Dependency Injection
     public PostController(PostSvc postSvc){
@@ -56,6 +56,11 @@ public class PostController {
     public String showResults(@PathVariable String term, Model vModel){
         vModel.addAttribute("post", postSvc.search(term, term));
         return "post/index";
+    }
+    @GetMapping("/posts/{id}/update/delete")
+    public String deletePost(@PathVariable int id) {
+        postSvc.deletePost(id);
+        return "redirect:/posts";
     }
 
 

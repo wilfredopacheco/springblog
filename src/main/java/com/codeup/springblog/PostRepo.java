@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface PostRepo extends CrudRepository<Post, Long> {
-    List<Post> findAllByOrDescriptionContains(String str, String ing);
+    List<Post> findAllByOrBodyContains(String str, String ing);
 
 //    @Query("from Post where title like %?1% or body like %?1%")
 //    List<Post>searchByTitle(String term);
