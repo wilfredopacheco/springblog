@@ -9,33 +9,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
 </head>
-<body class="container">
+<body class="container phm bg-light olive">
 <!--<div class="card col-8">-->
 <nav th:replace="nav :: nav"/>
 <div class="display-4 mb-4">Your Posts:</div>
 
 <div class="row">
-    <div class="card col-4 p-4 border-dark mb-3 float-left" th:each="post : ${posts}">
+    <div class="card phm bg-transparent olive border border-olive mb-3 col-4 p-4 float-left" th:each="post : ${posts}">
         <div>
             <h3 class="" th:text="${post.title}"></h3>
         </div>
         <div>
             <p class="" th:text="${post.body}"></p>
         </div>
-        <div class="card-footer bg-transparent d-flex inline-flex">
-            <div class="mr-2">
+        <!--<div class="btn-group" role="group" aria-label="Basic example">-->
+            <!--<button type="button" class="btn btn-secondary">Left</button>-->
+            <!--<button type="button" class="btn btn-secondary">Middle</button>-->
+            <!--<button type="button" class="btn btn-secondary">Right</button>-->
+        <!--</div>-->
+        <div class="card-footer bg-transparent border row border-olive d-flex inline-flex d-xs-inline">
+            <div class="mr-2 mb-2">
                 <form th:action="@{/posts/{id}(id=${post.id})}" method="get" th:object="${post.id}">
                     <!--<input type="hidden" th:value="${post.id}"/>-->
                     <button type="submit" class="btn btn-secondary">View</button>
                 </form>
             </div>
-            <div class="mr-2">
+            <div class="mr-2 mb-2">
                 <form th:action="@{/posts/{id}/update(id=${post.id})}" method="get" th:object="${post.id}">
                     <!--<input type="hidden" th:value="${post.id}"/>-->
                     <button type="submit" class="btn btn-warning">Edit</button>
                 </form>
             </div>
-            <div class="mr-2">
+            <div class="mr-2 mb-2">
                 <form th:action="@{/posts/{id}/update/delete(id=${post.id})}" method="get" th:object="${post.id}">
                     <!--<input type="hidden" th:value="${post.id}"/>-->
                     <button type="submit" class="btn btn-danger">Delete</button>
@@ -45,9 +50,6 @@
     </div>
 </div>
 
-
-
-<!--</div>-->
 <footer th:replace="footer :: footer"/>
 </body>
 </html>

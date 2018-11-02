@@ -1,6 +1,6 @@
 package com.codeup.springblog.services;
 
-import com.codeup.springblog.Post;
+import com.codeup.springblog.models.Post;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -14,10 +14,10 @@ public class AdsSvc {
         ads = new ArrayList<>();
     }
 
-    public void createAds() {
-        ads.add(new Post("a good day", "meh"));
-        ads.add(new Post("a bad day", "meh again"));
-    }
+//    public void createAds() {
+//        ads.add(new Post("a good day", "meh"));
+//        ads.add(new Post("a bad day", "meh again"));
+//    }
 //    public Ad findOne(long id){
 //        return ads.get((int) id -1);
 //    }

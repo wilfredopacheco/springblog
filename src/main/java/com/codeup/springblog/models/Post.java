@@ -1,7 +1,10 @@
-package com.codeup.springblog;
+package com.codeup.springblog.models;
 
+
+import org.apache.catalina.User;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "posts")
@@ -17,18 +20,27 @@ public class Post {
     @Column(nullable = false, length = 100)
     private String body;
 
+    @OneToOne
+    private User user;
+
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "posts")
+//    private Users users;
+
+
     public Post() {
     }
 
-    public Post(long id, String title, String body) {
+    public Post(long id, String title, String body, User user) {
         this.id = id;
         this.title = title;
         this.body = body;
+        this.user = user;
     }
 
-    public Post(String title, String body) {
+    public Post(String title, String body, User user) {
         this.title = title;
         this.body = body;
+        this.user = user;
     }
 
     public String getBody() {
@@ -54,4 +66,20 @@ public class Post {
     public void setId(long id) {
         this.id = id;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+//    public List<UserPosts> getUser_posts() {
+//        return user_posts;
+//    }
+//
+//    public void setUser_posts(List<UserPosts> user_posts) {
+//        this.user_posts = user_posts;
+//    }
 }

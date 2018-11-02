@@ -1,7 +1,9 @@
 package com.codeup.springblog.controllers;
 
-import com.codeup.springblog.Post;
+import com.codeup.springblog.models.Post;
 import com.codeup.springblog.services.PostSvc;
+import com.codeup.springblog.services.UserRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +12,9 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class PostController {
     private final PostSvc postSvc;
+
+    @Autowired
+    private UserRepo userRepo;
 
     //Dependency Injection
     public PostController(PostSvc postSvc){
@@ -35,7 +40,8 @@ public class PostController {
     }
 
     @PostMapping("/posts/create")
-    public String createPost(@ModelAttribute Post post){
+    public String createPost(@ModelAttribute Post post, @RequestParam(value = "user") UserRepo userRepo){
+//        post.setUser(userRepo.findOne(1));
         Post savedPost = postSvc.createPost(post);
         return "redirect:/posts/" + savedPost.getId();
     }
