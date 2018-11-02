@@ -1,10 +1,9 @@
 package com.codeup.springblog.models;
 
 
-import org.apache.catalina.User;
+
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "posts")
@@ -24,7 +23,7 @@ public class Post {
     private User user;
 
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "posts")
-//    private Users users;
+//    private User users;
 
 
     public Post() {

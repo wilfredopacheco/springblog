@@ -7,14 +7,14 @@ import java.util.List;
 @Table(name="user_posts")
 public class UserPosts {
 
-    @Id
-    @GeneratedValue
-    private long id;
-
-    @Column(nullable = false)
-    private List<Post> posts;
-
-    @ManyToOne
-    @JoinColumn(name = "id")
-    private Users users;
+//    @Id
+//    @GeneratedValue
+//    private long id;
+//
+//    @Column(nullable = false)
+//    private List<Post> posts;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "id")
+//    private User user;
 }

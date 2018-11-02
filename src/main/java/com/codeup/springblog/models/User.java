@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
-public class Users {
+public class User {
 
     @Id
     @GeneratedValue
@@ -23,10 +23,10 @@ public class Users {
     private String picture_large;
 
 
-    public Users() {
+    public User() {
     }
 
-    public Users(long id, String username, String email, String password, String picture_large) {
+    public User(long id, String username, String email, String password, String picture_large) {
         this.id = id;
         this.username = username;
         this.email = email;
