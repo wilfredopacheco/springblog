@@ -40,8 +40,8 @@ public class PostController {
     }
 
     @PostMapping("/posts/create")
-    public String createPost(@ModelAttribute Post post, @RequestParam(value = "user") UserRepo userRepo){
-//        post.setUser(userRepo.findOne(1));
+    public String createPost(@ModelAttribute Post post){
+        post.setUser(userRepo.findOne(1L));
         Post savedPost = postSvc.createPost(post);
         return "redirect:/posts/" + savedPost.getId();
     }
