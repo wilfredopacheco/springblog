@@ -40,6 +40,13 @@ public class User {
         this.password = password;
         this.picture_large = picture_large;
     }
+    public User(User copy) {
+        id = copy.id; // This line is SUPER important! Many things won't work if it's absent
+        email = copy.email;
+        username = copy.username;
+        password = copy.password;
+        picture_large = copy.picture_large;
+    }
 
     public long getId() {
         return id;
