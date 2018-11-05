@@ -9,7 +9,7 @@
 
 
 *{
-    transition: all 1s;
+    transition: all 1.5s;
 
 }
 
@@ -22,7 +22,7 @@ body {
     /*background: linear-gradient(45deg, red, blue);*/
 }
 
-/*.jumbotron{*/
-    /*background-image: url("https://images.pexels.com/photos/267569/pexels-photo-267569.jpeg?cs=srgb&dl=author-blog-businesswoman-267569.jpg&fm=jpg");*/
-    /*background-size: cover;*/
-/*}*/
+.jumbotron{
+    background-image: url("https://images.pexels.com/photos/267569/pexels-photo-267569.jpeg?cs=srgb&dl=author-blog-businesswoman-267569.jpg&fm=jpg");
+    background-size: cover;
+}

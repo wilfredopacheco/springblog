@@ -25,7 +25,6 @@ public class Post {
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "posts")
 //    private User users;
 
-
     public Post() {
     }
 
