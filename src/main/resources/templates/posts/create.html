@@ -9,10 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
 </head>
-<body class="container">
+<body class="container bg-olive navy">
 <nav th:replace="nav :: nav"/>
 <div>
-    <div class="card col-10 p-3 mt-4 border-dark mb-3">
+    <div class="card col-10 p-3 border-dark mb-3 mx-auto">
         <h1 class="text-center">Create Post</h1>
         <div class="card col-12 p-3 border-dark mb-3">
             <form th:action="@{/posts/create}" method="post" th:object="${post}">
@@ -26,7 +26,7 @@
                     <textarea th:field="*{body}" class="form-control" id="description" rows="3"></textarea>
                 </div>
                 <br />
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-outline-primary btn-sm">Submit</button>
             </form>
         </div>
     </div>

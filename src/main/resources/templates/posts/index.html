@@ -9,42 +9,44 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
 </head>
-<body class="container phm orange">
+<body class="container phm bg-olive navy">
 <!--<div class="card col-8">-->
 <nav th:replace="nav :: nav"/>
 <div class="display-4 mb-4">Your Posts:</div>
 
 <div class="row">
-    <div class="card phm bg-transparent orange border border-olive mb-3 col-4 p-4 float-left" th:each="post : ${posts}">
-        <div>
-            <h3 class="" th:text="${post.title}"></h3>
-        </div>
-        <div>
-            <p class="" th:text="${post.body}"></p>
-        </div>
-        <!--<div class="btn-group" role="group" aria-label="Basic example">-->
+    <div class="card border mb-3 col-4 p-4 float-left" th:each="post : ${posts}">
+        <div class="card phm bg-transparent navy border mb-3 p-4">
+            <div>
+                <h3 class="" th:text="${post.title}"></h3>
+            </div>
+            <div>
+                <p class="" th:text="${post.body}"></p>
+            </div>
+            <!--<div class="btn-group" role="group" aria-label="Basic example">-->
             <!--<button type="button" class="btn btn-secondary">Left</button>-->
             <!--<button type="button" class="btn btn-secondary">Middle</button>-->
             <!--<button type="button" class="btn btn-secondary">Right</button>-->
-        <!--</div>-->
-        <div class="card-footer bg-transparent border-0 row border-olive d-flex inline-flex d-xs-inline mb-1">
-            <div class="mr-1 mb-1">
-                <form th:action="@{/posts/{id}(id=${post.id})}" method="get" th:object="${post.id}">
-                    <!--<input type="hidden" th:value="${post.id}"/>-->
-                    <button type="submit" class="btn btn-outline-primary btn-sm">View</button>
-                </form>
-            </div>
-            <div class="mr-1 mb-1">
-                <form th:action="@{/posts/{id}/update(id=${post.id})}" method="get" th:object="${post.id}">
-                    <!--<input type="hidden" th:value="${post.id}"/>-->
-                    <button type="submit" class="btn btn-outline-warning btn-sm">Edit</button>
-                </form>
-            </div>
-            <div class="mr-1 mb-1">
-                <form th:action="@{/posts/{id}/update/delete(id=${post.id})}" method="get" th:object="${post.id}">
-                    <!--<input type="hidden" th:value="${post.id}"/>-->
-                    <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
-                </form>
+            <!--</div>-->
+            <div class="card-footer bg-transparent border-0 row border-olive d-flex inline-flex d-xs-inline mb-1">
+                <div class="mr-1 mb-1">
+                    <form th:action="@{/posts/{id}(id=${post.id})}" method="get" th:object="${post.id}">
+                        <!--<input type="hidden" th:value="${post.id}"/>-->
+                        <button type="submit" class="btn btn-outline-primary btn-sm">View</button>
+                    </form>
+                </div>
+                <div class="mr-1 mb-1">
+                    <form th:action="@{/posts/{id}/update(id=${post.id})}" method="get" th:object="${post.id}">
+                        <!--<input type="hidden" th:value="${post.id}"/>-->
+                        <button type="submit" class="btn btn-outline-primary btn-sm">Edit</button>
+                    </form>
+                </div>
+                <div class="mr-1 mb-1">
+                    <form th:action="@{/posts/{id}/update/delete(id=${post.id})}" method="get" th:object="${post.id}">
+                        <!--<input type="hidden" th:value="${post.id}"/>-->
+                        <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
