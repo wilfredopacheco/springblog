@@ -9,21 +9,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
 </head>
-<body class="container navy">
+<body class="container">
 <nav th:replace="nav :: nav"/>
-<h1>This is the Home Page</h1>
+<h1 class="purple">This is the Home Page</h1>
 <p th:text="${name}"></p>
 
-<div class="jumbotron white">
-    <h1 class="display-4">Hello, Blogger!</h1>
-    <p class="lead">Welcome to Spring Blog.</p>
+<div class="jumbotron navy">
+    <h1 class="display-4 yellow">Hello, Blogger!</h1>
+    <p class="lead red">Welcome to Spring Blog.</p>
     <hr class="my-4"/>
-    <p>It uses Spring with thymeleaf library to create a server that allows access to the database in MySQL.</p>
+    <p class="purple">It uses Spring with thymeleaf library to create a server that allows access to the database in MySQL.</p>
     <a class="btn btn-outline-primary btn-lg" href="/posts" role="button">Enter Site</a>
 </div>
-
-
-
 
 <footer th:replace="footer :: footer"/>
 </body>

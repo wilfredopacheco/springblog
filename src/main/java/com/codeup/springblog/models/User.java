@@ -22,7 +22,6 @@ public class User {
     @Column(length = 60)
     private String picture_large;
 
-
     public User() {
     }
 

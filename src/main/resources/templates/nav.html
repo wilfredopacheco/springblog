@@ -1,26 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
-<body>
+<body class="navy">
 <nav class="nav border border-top-0 mb-4 p-3" th:fragment="nav">
     <ul class="nav">
+        <li sec:authorize="isAuthenticated()" class="nav-item navy border rounded p-3 mr-2">
+            <th:block th:text="${'Welcome, ' + #authentication.principal.username}"/>
+        </li>
         <li class="nav-item navy border rounded p-1 mr-2">
             <a class="nav-link active navy" href="/home">Home</a>
         </li>
-        <li class="nav-item navy border rounded p-1 mr-2">
-            <a class="nav-link navy" href="/users">Users</a>
-        </li>
-        <li class="nav-item navy border rounded p-1 mr-2">
-            <a class="nav-link navy" href="/roll-dice">Roll</a>
-        </li>
+        <!--<li class="nav-item navy border rounded p-1 mr-2">-->
+            <!--<a class="nav-link navy" href="/users">Users</a>-->
+        <!--</li>-->
+        <!--<li class="nav-item navy border rounded p-1 mr-2">-->
+            <!--<a class="nav-link navy" href="/roll-dice">Roll</a>-->
+        <!--</li>-->
         <li class="nav-item navy border rounded p-1 mr-2">
             <a class="nav-link navy" href="/posts">Posts</a>
         </li>
         <li class="nav-item navy border rounded p-1 mr-2">
             <a class="nav-link navy" href="/posts/create">Create</a>
+        </li>
+        <li sec:authorize="!isAuthenticated()" class="nav-item navy border rounded p-1 mr-2">
+            <a class="nav-link navy" href="/login">Login</a>
+        </li>
+        <li sec:authorize="isAuthenticated()" class="nav-item navy border rounded p-1 mr-2">
+            <a class="nav-link navy" href="/profile">Profile</a>
+        </li>
+        <li sec:authorize="!isAuthenticated()" class="nav-item navy border rounded p-1 mr-2">
+            <a class="nav-link navy" href="/sign-up">Sign Up</a>
+        </li>
+        <li sec:authorize="isAuthenticated()" class="nav-item navy border rounded p-2 mr-2">
+            <form th:action="@{/logout}" th:method="post">
+                <button class="btn-link btn navy my-auto" style="margin-top: 8px">Logout</button>
+            </form>
         </li>
         <li>
             <!--<form class="form-inline">-->
