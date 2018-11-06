@@ -10,8 +10,11 @@ import java.util.List;
 @Controller
 public class HomeController {
 
+    @GetMapping("/")
+    public String landing(){
+        return"/home";
+    }
     @GetMapping("/home")
-
     public String hello(){
         return "home";
     }
