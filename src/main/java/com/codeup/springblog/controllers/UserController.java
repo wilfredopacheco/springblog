@@ -37,7 +37,8 @@ public class UserController {
     @GetMapping("/profile")
     public String getUserProfile(@ModelAttribute User user){
 
-        return "/profile/" + user.getId();
+        System.out.println(user.getId() + user.getUsername());
+        return "profile/" + user.getId();
     }
 
     @GetMapping("/profile/{id}")
@@ -50,6 +51,6 @@ public class UserController {
         }
 
         model.addAttribute("user", user);
-        return "/posts";
+        return "profile";
     }
 }
