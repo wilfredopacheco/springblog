@@ -13,7 +13,7 @@ public class Post {
     @Column(nullable = false, length = 100)
     private String title;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 6500)
     private String body;
 
     @OneToOne

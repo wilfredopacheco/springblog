@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="head :: head">
     <meta charset="UTF-8" />
     <title>Sign up</title>
 </head>
-<body>
-<h1>Create an account</h1>
-<form th:action="@{/sign-up}" th:method="POST" th:object="${user}">
-    <label for="username">Username</label>
-    <input id="username" th:field="*{username}" />
+<body class="container d-flex justify-content-center">
+<div class="card col-8 p-4 mt-5 border-primary bg-light">
+    <h1 class="text-center text-primary">Create an account</h1>
+    <form th:action="@{/sign-up}" th:method="POST" th:object="${user}">
+        <div class="card p-2 mt-4 bg-light">
+            <label for="username" class="text-primary">Username</label>
+            <input id="username" th:field="*{username}" class="form-control border-primary" th:required="true"/>
+        </div>
+        <div class="card p-2 mt-4 bg-light">
+            <label for="email" class="text-primary">Email</label>
+            <input id="email" th:field="*{email}" class="form-control border-primary" th:required="true"/>
+        </div>
+        <div class="card p-2 mt-4 bg-light">
+            <label for="password" class="text-primary">Password</label>
+            <input id="password" type="password" th:field="*{password}" class="form-control border-primary" th:required="true"/>
+        </div>
+        <div class="mt-4">
+            <input value="Sign me up!" type="submit" class="btn btn-primary" />
+        </div>
+    </form>
+    <div class="mt-4">
+        <a href="/home"><button class="btn btn-primary" href="/">Home</button></a>
+    </div>
 
-    <label for="email">Email</label>
-    <input id="email" th:field="*{email}" />
+</div>
+<footer th:replace="/footer :: footer"/>
 
-    <label for="password">Password</label>
-    <input id="password" type="password" th:field="*{password}" />
-
-    <input value="Sign me up!" type="submit" />
-</form>
 </body>
 </html>

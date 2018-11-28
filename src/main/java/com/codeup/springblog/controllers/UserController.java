@@ -36,9 +36,9 @@ public class UserController {
     }
     @GetMapping("/profile")
     public String getUserProfile(@ModelAttribute User user){
-
         System.out.println(user.getId() + user.getUsername());
-        return "profile/" + user.getId();
+
+        return "redirect:/profile/" + user.getId();
     }
 
     @GetMapping("/profile/{id}")

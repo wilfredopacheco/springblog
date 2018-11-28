@@ -46,11 +46,7 @@ public class PostController {
         return "redirect:/posts/" + savedPost.getId();
     }
 
-    @GetMapping("/posts/{id}/update")
-    public String showEditForm(@PathVariable int id, Model vModel){
-        vModel.addAttribute("post", postSvc.getSinglePost(id));
-        return "posts/update";
-    }
+
 
     @PostMapping("/posts/{id}/update")
     public String showUpdateForm(@ModelAttribute Post post){
