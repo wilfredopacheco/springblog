@@ -6,10 +6,9 @@
 </head>
 <body class="container">
 <nav th:replace="nav :: nav"/>
-
-<h1>Users Page</h1>
+<!--<h1>Users Page</h1>-->
 <ul>
-<li th:each="user : ${users}" th:text="${user}"></li>
+    <li th:each="user : ${users}" th:text="${user}"></li>
 </ul>
 <div th:replace="footer :: footer"></div>
 </body>

@@ -20,37 +20,16 @@ public class UserController {
         this.userRepo = userRepo;
         this.passwordEncoder = passwordEncoder;
     }
-
     @GetMapping("/sign-up")
     public String showSignupForm(Model model){
         model.addAttribute("user", new User());
         return "users/sign-up";
     }
-
     @PostMapping("/sign-up")
     public String saveUser(@ModelAttribute User user){
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         userRepo.save(user);
         return "redirect:/login";
-    }
-    @GetMapping("/profile")
-    public String getUserProfile(@ModelAttribute User user){
-        System.out.println(user.getId() + user.getUsername());
-
-        return "redirect:/profile/" + user.getId();
-    }
-
-    @GetMapping("/profile/{id}")
-    public String showProfile(@PathVariable long id, Model model){
-        User user = userRepo.findOne(id);
-        User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
-        if(!user.getUsername().equals(loggedInUser.getUsername())){
-            return "redirect:/posts";
-        }
-
-        model.addAttribute("user", user);
-        return "profile";
     }
 }

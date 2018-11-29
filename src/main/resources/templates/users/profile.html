@@ -4,11 +4,18 @@
     <meta charset="UTF-8" />
     <title>Log In</title>
 </head>
-<body class="container navy">
 
-<div class="card">
-    <img th:src="${user.picture_large}" alt="profile_picture"/>
-    <div th:text="${user.username}"></div>
+<body class="container navy">
+<nav th:replace="nav :: nav"/>
+
+<div class=" card p-4 mt-4">
+    <div class="media mt-4" th:object="${user}">
+        <img class="mr-3" th:src="${user.picture_large}" alt="Generic placeholder image"/>
+        <div class="media-body">
+            <h5 class="mt-0" th:text="${user.username}"></h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        </div>
+    </div>
 </div>
 
 
