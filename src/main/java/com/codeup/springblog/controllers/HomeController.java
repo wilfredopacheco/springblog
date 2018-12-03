@@ -31,10 +31,7 @@ public class HomeController {
         users.add("Wil");
         users.add("Daniel");
         users.add("Justin");
-
         vModel.addAttribute("users", users);
-
-
         return "users";
     }
 

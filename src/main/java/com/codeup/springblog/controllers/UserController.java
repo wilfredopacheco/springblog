@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class UserController {
     private UserRepo userRepo;
@@ -31,5 +33,11 @@ public class UserController {
         user.setPassword(hash);
         userRepo.save(user);
         return "redirect:/login";
+    }
+
+    @GetMapping
+    public String allUsers(){
+//        List<User> allUsers = userRepo.findAll();
+        return "users/all-users";
     }
 }

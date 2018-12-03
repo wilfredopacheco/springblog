@@ -11,10 +11,12 @@
 </head>
 <body class="container">
 <nav th:replace="nav :: nav"/>
-<h1>single post</h1>
-<div class="card col-4 border">
-    <h2 th:text="${post.title}"></h2>
-    <p th:text="${post.body}"></p>
+<div class="card col-4 p-0">
+    <div class="card-header"><h1>User's Post</h1></div>
+    <div class="card-body border">
+        <h2 th:text="${post.title}"></h2>
+        <p th:text="${post.body}"></p>
+    </div>
 </div>
 
 
