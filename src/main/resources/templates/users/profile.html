@@ -10,7 +10,7 @@
 
 <div class=" card p-4 mt-4">
     <div class="media mt-4" th:object="${user}">
-        <img class="mr-3" th:src="${user.picture_large}" alt="Generic placeholder image"/>
+        <img class="mr-3 border rounded-circle" th:src="${user.picture_large}" alt="Generic placeholder image"/>
         <div class="media-body">
             <h5 class="mt-0" th:text="${user.username}"></h5>
             Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
@@ -30,7 +30,7 @@
                 <div>
                     Posted By: <p th:text="${post.getUser().getUsername()}"></p>
                 </div>
-                <div><img th:src="${post.getUser().getPicture_large()}" class="border rounded-circle float-right" alt="profile picture"/></div>
+                <!--<div><img th:src="${post.getUser().getPicture_large()}" class="border rounded-circle float-right" alt="profile picture"/></div>-->
 
                 <div class="card-footer bg-transparent border-0 row border-olive d-flex inline-flex d-xs-inline mb-1">
                     <div class="mr-1 mb-1">

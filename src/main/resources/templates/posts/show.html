@@ -12,9 +12,12 @@
 <body class="container">
 <nav th:replace="nav :: nav"/>
 <div class="card col-4 p-0">
-    <div class="card-header"><h1>User's Post</h1></div>
+    <div class="card-header text-center"><h1><span th:text="${post.getUser().getUsername()}"></span>'s Post</h1></div>
     <div class="card-body border">
-        <h2 th:text="${post.title}"></h2>
+        <div class="p-3">
+            <img class="border rounded-circle" th:src="${post.getUser().getPicture_large()}" alt="post owner"/>
+        </div>
+        <div class="display-4" th:text="${post.title}"></div>
         <p th:text="${post.body}"></p>
     </div>
 </div>

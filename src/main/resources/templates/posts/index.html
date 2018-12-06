@@ -34,18 +34,18 @@
                         <button type="submit" class="btn btn-outline-primary btn-sm">View</button>
                     </form>
                 </div>
-                <div sec:authorize="isAuthenticated()" class="mr-1 mb-1">
-                    <form th:action="@{/posts/{id}/update(id=${post.id})}" method="get" th:object="${post.id}">
-                        <!--<input type="hidden" th:value="${post.id}"/>-->
-                        <button type="submit" class="btn btn-outline-primary btn-sm">Edit</button>
-                    </form>
-                </div>
-                <div sec:authorize="isAuthenticated()" class="mr-1 mb-1">
-                    <form th:action="@{/posts/{id}/update/delete(id=${post.id})}" method="get" th:object="${post.id}">
-                        <!--<input type="hidden" th:value="${post.id}"/>-->
-                        <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
-                    </form>
-                </div>
+                <!--<div sec:authorize="isAuthenticated()" class="mr-1 mb-1">-->
+                    <!--<form th:action="@{/posts/{id}/update(id=${post.id})}" method="get" th:object="${post.id}">-->
+                        <!--&lt;!&ndash;<input type="hidden" th:value="${post.id}"/>&ndash;&gt;-->
+                        <!--<button type="submit" class="btn btn-outline-primary btn-sm">Edit</button>-->
+                    <!--</form>-->
+                <!--</div>-->
+                <!--<div sec:authorize="isAuthenticated()" class="mr-1 mb-1">-->
+                    <!--<form th:action="@{/posts/{id}/update/delete(id=${post.id})}" method="get" th:object="${post.id}">-->
+                        <!--&lt;!&ndash;<input type="hidden" th:value="${post.id}"/>&ndash;&gt;-->
+                        <!--<button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>-->
+                    <!--</form>-->
+                <!--</div>-->
             </div>
         </div>
     </div>
