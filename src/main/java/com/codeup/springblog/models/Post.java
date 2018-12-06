@@ -19,8 +19,6 @@ public class Post {
     @OneToOne
     private User user;
 
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "posts")
-//    private User users;
 
     public Post() {
     }
@@ -70,11 +68,4 @@ public class Post {
         this.user = user;
     }
 
-//    public List<UserPosts> getUser_posts() {
-//        return user_posts;
-//    }
-//
-//    public void setUser_posts(List<UserPosts> user_posts) {
-//        this.user_posts = user_posts;
-//    }
 }
